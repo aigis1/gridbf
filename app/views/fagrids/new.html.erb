@@ -1,0 +1,128 @@
+<div class="items-sell-contents">
+  <%# <header class="items-sell-header">
+    <%= link_to image_tag('furima-logo-color.png' , size: '185x50'), "/" %>
+
+  <%# </header> %>
+  <div class="items-sell-main">
+    <h2 class="items-sell-title">編成の情報を入力</h2>
+    <%= form_with model: @fagrid, url: fagrids_path, local: true do |f| %>
+
+    <%# インスタンスを渡して、エラー発生時にメッセージが表示されるようにしましょう。%>
+    <%# <%= render 'shared/error_messages', model: f.object %>
+    <%# //インスタンスを渡して、エラー発生時にメッセージが表示されるようにしましょう。%>
+
+    <%# 装備画像 %>
+    <div class="img-upload">
+      <div class="weight-bold-text">
+        装備画像
+        <span class="indispensable">必須</span>
+      </div>
+      <div class="click-upload">
+        <p>
+          クリックしてファイルをアップロード
+        </p>
+        <%= f.file_field :image, id:"item-image" %>
+      </div>
+    </div>
+    <%# /装備画像 %>
+
+    <%# 戦闘概要 %>
+    <div class="items-detail">
+      <div class="weight-bold-text">詳細</div>
+      <div class="form">
+        <div class="weight-bold-text">
+          対戦相手
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.collection_select(:quest_id, Quest.all, :id, :name, {}, {class:"select-box", id:"quest"}) %>
+        <div class="weight-bold-text">
+          主人公の属性
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.collection_select(:attr_id, Attr.all, :id, :name, {}, {class:"select-box", id:"attr"}) %>
+        <div class="weight-bold-text">
+          主人公のジョブ
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.collection_select(:job_id, Job.all, :id, :name, {}, {class:"select-box", id:"job"}) %>
+        <div class="weight-bold-text">
+          主人公のアビリティ
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.collection_select(:ex_ability_id, ExAbility.all, :id, :name, {}, {class:"select-box", id:"ex-ability"}) %>
+        <%= f.collection_select(:limit_ability_id, LimitAbility.all, :id, :name, {}, {class:"select-box", id:"limit-ability"}) %>
+
+      </div>
+    </div>
+    <%# /戦闘概要 %>
+
+    <%# バトルメンバー %>
+    <div class="new-items">
+      <div class="weight-bold-text">
+        バトルメンバー
+        <span class="indispensable">必須</span>
+      </div>
+      <%= f.text_area :member1, class:"items-text", id:"member1-name", placeholder:"キャラクター名", maxlength:"20" %>
+      <%= f.text_area :member2, class:"items-text", id:"member2-name", placeholder:"キャラクター名", maxlength:"20" %>
+      <%= f.text_area :member3, class:"items-text", id:"member3-name", placeholder:"キャラクター名", maxlength:"20" %>
+      <%= f.text_area :member4, class:"items-text", id:"member4-name", placeholder:"キャラクター名", maxlength:"20" %>
+      <%= f.text_area :member5, class:"items-text", id:"member5-name", placeholder:"キャラクター名", maxlength:"20" %>
+    </div>
+    <%#/ バトルメンバー %>
+
+    <%# 召喚石について %>
+    <div class="items-detail">
+      <div class="weight-bold-text question-text">
+        <span>召喚石</span>
+        <a class="question" href="#">?</a>
+      </div>
+      <div class="form">
+        <div class="weight-bold-text">
+          メイン召喚石
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.collection_select(:main_summon_id, MainSummon.all, :id, :name, {}, {class:"select-box", id:"main-summon"}) %>
+        <div class="weight-bold-text">
+          天司石
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.collection_select(:seraphic_id, Seraphic.all, :id, :name, {}, {class:"select-box", id:"seraphic"}) %>
+        <div class="weight-bold-text">
+          アーカルム石
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.collection_select(:atk_arculm_id, AtkArculm.all, :id, :name, {include_blank: "攻撃"}, {class:"select-box", id:"atk-arculm"}) %>
+        <%= f.collection_select(:hp_arculm_id, AtkArculm.all, :id, :name, {include_blank: "HP"}, {class:"select-box", id:"hp-arculm"}) %>
+      </div>
+    </div>
+    <%# /配送について %>
+
+    <%# その他 %>
+    <div class="new-items">
+      <div class="items-explain">
+        <div class="weight-bold-text">
+          備考欄
+        </div>
+      <%= f.text_area :remark, class:"items-text", id:"remark", placeholder:"当てはまらなかったものがある場合や、予備アクションなどがあればこちらに記載してください（始めにアンスリア2アビを使う、召喚石を使う等）", maxlength:"500" %>
+      </div>
+      <div class="weight-bold-text">
+        終末武器
+        <span class="indispensable">必須</span>
+      </div>
+      <%= f.collection_select(:difficulty_id, Difficulty.all, :id, :name, {}, {class:"select-box", id:"difficulty"}) %>
+      <div class="weight-bold-text">
+        参考タイム
+        <span class="indispensable">必須</span>
+      </div>
+      <%= f.collection_select(:time_about_id, TimeAbout.all, :id, :name, {}, {class:"select-box", id:"time-about"}) %>
+    </div>
+    <%#/ その他 %>
+
+    <%# 下部ボタン %>
+    <div class="sell-btn-contents">
+      <%= f.submit "投稿する" ,class:"sell-btn" %>
+      <%=link_to 'もどる', root_path, class:"back-btn" %>
+    </div>
+    <%# /下部ボタン %>
+  </div>
+  <% end %>
