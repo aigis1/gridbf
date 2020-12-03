@@ -1,0 +1,100 @@
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+<link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP&display=swap" rel="stylesheet">
+
+<main role="main">
+
+  <section class="jumbotron text-center">
+    <div class="container">
+      <!-- <h1 class="jumbotron-heading">Album example</h1> -->
+      <h1 class="jumbotron-heading">装備編成共有サイト</h1>
+      <!-- <p class="lead text-muted">Something short and leading about the collection below—its contents, the creator, etc. Make it short and sweet, but not too short so folks don't simply skip over it entirely.</p> -->
+      <p class="lead text-muted">フルオートで日課を消化するときどんな編成を使ってるかを共有しよう</p>
+      <p>
+        <!-- <a href="#" class="btn btn-primary my-2">Main call to action</a> -->
+        <%= link_to '投稿する', new_fagrid_path, class: "btn btn-primary my-2"%>
+        <!-- <a href="#" class="btn btn-secondary my-2">Secondary action</a> -->
+        <a href="#" class="btn btn-secondary my-2">検索する</a>
+      </p>
+    </div>
+  </section>
+
+  <div class="album py-5 bg-light">
+    <div class="container">
+<%# ---------- %>
+      <% @fagrids.each do |fagrid| %>
+      <div class='col-md-4'>
+        <div class="card mb-4 shadow-sm">
+        <%= link_to fagrid_path(fagrid.id) do %>
+          <%= image_tag fagrid.image, class: "card-img-top" %>
+          <div class="card-body">
+            <h4 class="card-title"><%= fagrid.quest.name %></h4>
+            <p class="card-text"><%= fagrid.main_summon.name %></p>
+            <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <!-- <button type="button" class="btn btn-sm btn-outline-secondary">View</button> -->
+                  <button type="button" class="btn btn-sm btn-outline-secondary">見る</button>
+                  <!-- <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button> -->
+                  <button type="button" class="btn btn-sm btn-outline-secondary">編集</button>
+                </div>
+                <!-- <small class="text-muted">9 mins</small> -->
+                <small class="text-muted">投稿日時：<%= fagrid.created_at %></small>
+              </div>
+            </div>
+          </div>
+        <% end %>
+        </div>
+      </div>
+      <% end %>
+
+<%# ----------- %>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="card mb-4 shadow-sm">
+            <%= image_tag "sumple1.jpg", class:"card-img-top" %>
+            <div class="card-body">
+              <!-- <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p> -->
+              <p class="card-text">sumple</br>ここに表示する内容も考えること</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <!-- <button type="button" class="btn btn-sm btn-outline-secondary">View</button> -->
+                  <button type="button" class="btn btn-sm btn-outline-secondary">見る</button>
+                  <!-- <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button> -->
+                  <button type="button" class="btn btn-sm btn-outline-secondary">編集</button>
+                </div>
+                <!-- <small class="text-muted">9 mins</small> -->
+                <small class="text-muted">投稿日時：19:00</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</main>
+
+<footer class="text-muted">
+  <div class="container">
+    <p class="float-right">
+      <!-- <a href="#">Back to top</a> -->
+      <a href="#">トップに戻る</a>
+    </p>
+    <!-- <p>Album example is &copy; Bootstrap, but please download and customize it for yourself!</p> -->
+    <p>アルバムサンプルは &copy; Bootstrap ですが, ダウンロードしてカスタマイズしてみましょう。</p>
+    <!-- <p>New to Bootstrap? <a href="../../">Visit the homepage</a> or read our <a href="../../getting-started/">getting started guide</a>.</p> -->
+    <p>Bootstrap は初めてですか？ <a href="../../">Bootstrap ホームページにアクセスする</a>か<a href="../../getting-started/">スタートガイド</a>を読みましょう。</p>
+  </div>
+</footer>
+<script src="../../assets/js/vendor/holder.min.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script>
+  window.jQuery || document.write('<script src="/docs/4.5/assets/js/vendor/jquery-slim.min.js"><\/script>')
+</script><script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script><script src="/docs/4.5/assets/js/vendor/anchor.min.js"></script>
+<script src="/docs/4.5/assets/js/vendor/clipboard.min.js"></script>
+<script src="/docs/4.5/assets/js/vendor/bs-custom-file-input.min.js"></script>
+<script src="/docs/4.5/assets/js/src/application.js"></script>
+<script src="/docs/4.5/assets/js/src/search.js"></script>
+<script src="/docs/4.5/assets/js/src/ie-emulation-modes-warning.js"></script>
