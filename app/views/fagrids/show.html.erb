@@ -21,39 +21,36 @@
         </tr>
         <tr>
           <th class="detail-item">アビリティ</th>
-          <td class="detail-value"><%= @fagrid.ex_ability.name %></td>
+          <td class="detail-value"><%= @fagrid.ex_ability.name %>　<%= @fagrid.limit_ability.name %></td>
         </tr>
         <tr>
           <th class="detail-item">バトルメンバー</th>
-          <td class="detail-value"><%= @fagrid.member1 %></td>
-        </tr>
-        <tr>
-          <th class="detail-item">召喚石</th>
-          <td class="detail-value"><%= @fagrid.main_summon.name %></td>
-        </tr>
-        <tr>
-          <th class="detail-item">天司石</th>
-          <td class="detail-value"><%= @fagrid.seraphic.name %></td>
-        </tr>
-        <tr>
-          <th class="detail-item">アーカルム石</th>
-          <td class="detail-value"><%= @fagrid.atk_arculm.name %></td>
+          <td class="detail-value"><%= @fagrid.member1 %>　<%= @fagrid.member2 %>　<%= @fagrid.member3 %>　<%= @fagrid.member4 %>　<%= @fagrid.member5 %></td>
         </tr>
       </tbody>
     </table>
-    <div class="option">
-      <div class="favorite-btn">
-        <%#= image_tag "star.png" ,class:"favorite-star-icon" ,width:"20",height:"20"%>
-        <span>お気に入り 0</span>
-      </div>
-      <div class="report-btn">
-        <%#= image_tag "flag.png" ,class:"report-flag-icon" ,width:"20",height:"20"%>
-        <span>不適切な商品の通報</span>
-      </div>
-    </div>
-  </div>
-  <%# /商品の概要 %>
-
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th scope="col">メイン石</th>
+          <th scope="col">天司石</th>
+          <th scope="col">アーカルム石(与ダメ)</th>
+          <th scope="col">アーカルム石(HP)</th>
+          <th scope="col">終末</th>
+          <th scope="col">所要時間</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><%= @fagrid.main_summon.name %></td>
+          <td><%= @fagrid.seraphic.name %></td>
+          <td><%= @fagrid.atk_arculm.name %></td>
+          <td><%= @fagrid.hp_arculm.name %></td>
+          <td><%= @fagrid.difficulty.name %></td>
+          <td><%= @fagrid.time_about.name %></td>
+        </tr>
+      </tbody>
+    </table>
   <div class="comment-box">
     <form>
       <textarea class="comment-text"></textarea>
@@ -68,14 +65,5 @@
       </button>
     </form>
   </div>
-  <div class="links">
-    <a href="#" class="change-item-btn">
-      ＜ 前の商品
-    </a>
-    <a href="#" class="change-item-btn">
-      後ろの商品 ＞
-    </a>
-  </div>
-  <a href="#" class='another-item'><%= "商品のカテゴリー名" %>をもっと見る</a>
 </div>
 
