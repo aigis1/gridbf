@@ -61,6 +61,9 @@ gem 'pry-rails'
 gem 'active_hash'
 gem 'mini_magick'
 gem 'ransack'
+gem 'bootstrap', '~> 5.0.0.alpha3'
+gem 'jquery-rails'
+gem 'popper_js', '~> 1.14.5'
 
 group :production do
   gem 'rails_12factor'
