@@ -1,0 +1,81 @@
+
+
+<%# 商品の概要 %>
+<div class="item-show">
+  <div class="item-box">
+    <h2 class="name">
+      <%= @fagrid.quest.name %>
+    </h2>
+    <div class='item-img-content'>
+      <%= image_tag @fagrid.image, class:"item-box-img" %>
+    </div>
+
+    <div class="item-explain-box">
+      <span><%= @fagrid.remark %></span>
+    </div>
+    <table class="detail-table">
+      <tbody>
+        <tr>
+          <th class="detail-item">ジョブ</th>
+          <td class="detail-value"><%= @fagrid.job.name %></td>
+        </tr>
+        <tr>
+          <th class="detail-item">アビリティ</th>
+          <td class="detail-value"><%= @fagrid.ex_ability.name %></td>
+        </tr>
+        <tr>
+          <th class="detail-item">バトルメンバー</th>
+          <td class="detail-value"><%= @fagrid.member1 %></td>
+        </tr>
+        <tr>
+          <th class="detail-item">召喚石</th>
+          <td class="detail-value"><%= @fagrid.main_summon.name %></td>
+        </tr>
+        <tr>
+          <th class="detail-item">天司石</th>
+          <td class="detail-value"><%= @fagrid.seraphic.name %></td>
+        </tr>
+        <tr>
+          <th class="detail-item">アーカルム石</th>
+          <td class="detail-value"><%= @fagrid.atk_arculm.name %></td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="option">
+      <div class="favorite-btn">
+        <%#= image_tag "star.png" ,class:"favorite-star-icon" ,width:"20",height:"20"%>
+        <span>お気に入り 0</span>
+      </div>
+      <div class="report-btn">
+        <%#= image_tag "flag.png" ,class:"report-flag-icon" ,width:"20",height:"20"%>
+        <span>不適切な商品の通報</span>
+      </div>
+    </div>
+  </div>
+  <%# /商品の概要 %>
+
+  <div class="comment-box">
+    <form>
+      <textarea class="comment-text"></textarea>
+      <p class="comment-warn">
+        相手のことを考え丁寧なコメントを心がけましょう。
+        <br>
+        不快な言葉遣いなどは利用制限や退会処分となることがあります。
+      </p>
+      <button type="submit" class="comment-btn">
+        <%#= image_tag "comment.png" ,class:"comment-flag-icon" ,width:"20",height:"25"%>
+        <span>コメントする<span>
+      </button>
+    </form>
+  </div>
+  <div class="links">
+    <a href="#" class="change-item-btn">
+      ＜ 前の商品
+    </a>
+    <a href="#" class="change-item-btn">
+      後ろの商品 ＞
+    </a>
+  </div>
+  <a href="#" class='another-item'><%= "商品のカテゴリー名" %>をもっと見る</a>
+</div>
+
