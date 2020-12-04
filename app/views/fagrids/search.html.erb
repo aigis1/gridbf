@@ -1,0 +1,44 @@
+<main role="main">
+<div class="search-form">
+  <h1>編成を検索する</h1>
+  <%= search_form_for @g, url: fagrids_sort_path do |f| %>
+    <%= f.label :quest_id_eq, 'バトル' %>
+    <%= f.collection_select :quest_id_eq, Quest.all, :id, :name, include_blank: '指定なし' %>
+    <%= f.label :quest_id_eq, '主人公の属性' %>
+    <%= f.collection_select :attr_id_eq, Attr.all, :id, :name, include_blank: '指定なし' %>
+    <%= f.label :quest_id_eq, 'メイン石' %>
+    <%= f.collection_select :main_summon_id_eq, MainSummon.all, :id, :name, include_blank: '指定なし' %>
+    <%= f.label :quest_id_eq, '討伐時間' %>
+    <%= f.collection_select :time_about_id_eq, TimeAbout.all, :id, :name, include_blank: '指定なし' %>
+    <br>
+    <%= f.submit '検索' %>
+  <% end %>
+</div>
+  <div class="album py-5 bg-light">
+    <div class="container">
+      <div class="row">
+      <% @fagrids.each do |fagrid| %>
+        <div class='col-md-4'>
+          <div class="card mb-4 shadow-sm">
+          <%= link_to fagrid_path(fagrid.id) do %>
+            <%= image_tag fagrid.image, class: "card-img-top" %>
+          <% end %>
+            <div class="card-body">
+              <h4 class="card-title"><%= fagrid.quest.name %></h4>
+              <p class="card-text"><%= fagrid.main_summon.name %>(<%= fagrid.attr.name %>)　<%= fagrid.job.name %></p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary">見る</button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary">編集</button>
+                </div>
+                <small class="text-muted">投稿日時：<%= l fagrid.created_at, format: :short %></small>
+              </div>
+            </div>
+          </div>
+        </div>
+      <% end %>
+      </div>
+    </div>
+  </div>
+
+</main>
