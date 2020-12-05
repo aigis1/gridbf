@@ -1,3 +1,6 @@
+
+
+
 <div class="items-sell-contents">
   <%# <header class="items-sell-header">
     <%= link_to image_tag('furima-logo-color.png' , size: '185x50'), "/" %>
@@ -17,11 +20,12 @@
         装備画像
         <span class="indispensable">必須</span>
       </div>
+      <div id="image-list"></div>
       <div class="click-upload">
         <p>
           クリックしてファイルをアップロード
         </p>
-        <%= f.file_field :image, id:"item-image" %>
+        <%= f.file_field :image %>
       </div>
     </div>
     <%# /装備画像 %>
@@ -34,23 +38,23 @@
           対戦相手
           <span class="indispensable">必須</span>
         </div>
-        <%= f.collection_select(:quest_id, Quest.all, :id, :name, {}, {class:"select-box", id:"quest"}) %>
+        <%= f.collection_select(:quest_id, Quest.all, :id, :name, {include_blank: "---"}, {class:"select-box", id:"quest"}) %>
         <div class="weight-bold-text">
           主人公の属性
           <span class="indispensable">必須</span>
         </div>
-        <%= f.collection_select(:attr_id, Attr.all, :id, :name, {}, {class:"select-box", id:"attr"}) %>
+        <%= f.collection_select(:attr_id, Attr.all, :id, :name, {include_blank: "---"}, {class:"select-box", id:"attr"}) %>
         <div class="weight-bold-text">
           主人公のジョブ
           <span class="indispensable">必須</span>
         </div>
-        <%= f.collection_select(:job_id, Job.all, :id, :name, {}, {class:"select-box", id:"job"}) %>
+        <%= f.collection_select(:job_id, Job.all, :id, :name, {include_blank: "---"}, {class:"select-box", id:"job"}) %>
         <div class="weight-bold-text">
           主人公のアビリティ
           <span class="indispensable">必須</span>
         </div>
-        <%= f.collection_select(:ex_ability_id, ExAbility.all, :id, :name, {}, {class:"select-box", id:"ex-ability"}) %>
-        <%= f.collection_select(:limit_ability_id, LimitAbility.all, :id, :name, {}, {class:"select-box", id:"limit-ability"}) %>
+        <%= f.collection_select(:ex_ability_id, ExAbility.all, :id, :name, {include_blank: "---"}, {class:"select-box", id:"ex-ability"}) %>
+        <%= f.collection_select(:limit_ability_id, LimitAbility.all, :id, :name, {include_blank: "---"}, {class:"select-box", id:"limit-ability"}) %>
 
       </div>
     </div>
@@ -81,12 +85,12 @@
           メイン召喚石
           <span class="indispensable">必須</span>
         </div>
-        <%= f.collection_select(:main_summon_id, MainSummon.all, :id, :name, {}, {class:"select-box", id:"main-summon"}) %>
+        <%= f.collection_select(:main_summon_id, MainSummon.all, :id, :name, {include_blank: "---"}, {class:"select-box", id:"main-summon"}) %>
         <div class="weight-bold-text">
           天司石
           <span class="indispensable">必須</span>
         </div>
-        <%= f.collection_select(:seraphic_id, Seraphic.all, :id, :name, {}, {class:"select-box", id:"seraphic"}) %>
+        <%= f.collection_select(:seraphic_id, Seraphic.all, :id, :name, {include_blank: "---"}, {class:"select-box", id:"seraphic"}) %>
         <div class="weight-bold-text">
           アーカルム石
           <span class="indispensable">必須</span>
@@ -109,12 +113,12 @@
         終末武器
         <span class="indispensable">必須</span>
       </div>
-      <%= f.collection_select(:difficulty_id, Difficulty.all, :id, :name, {}, {class:"select-box", id:"difficulty"}) %>
+      <%= f.collection_select(:difficulty_id, Difficulty.all, :id, :name, {include_blank: "---"}, {class:"select-box", id:"difficulty"}) %>
       <div class="weight-bold-text">
         参考タイム
         <span class="indispensable">必須</span>
       </div>
-      <%= f.collection_select(:time_about_id, TimeAbout.all, :id, :name, {}, {class:"select-box", id:"time-about"}) %>
+      <%= f.collection_select(:time_about_id, TimeAbout.all, :id, :name, {include_blank: "---"}, {class:"select-box", id:"time-about"}) %>
     </div>
     <%#/ その他 %>
 
