@@ -64,6 +64,7 @@ gem 'ransack'
 gem 'bootstrap', '~> 5.0.0.alpha3'
 gem 'jquery-rails'
 gem 'popper_js', '~> 1.14.5'
+gem 'jquery-ui-rails'
 
 group :production do
   gem 'rails_12factor'

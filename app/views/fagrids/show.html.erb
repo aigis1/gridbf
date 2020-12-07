@@ -22,7 +22,11 @@
         </tr>
         <tr>
           <th class="detail-item">バトルメンバー</th>
-          <td class="detail-value"><%= @fagrid.member1 %>　<%= @fagrid.member2 %>　<%= @fagrid.member3 %>　<%= @fagrid.member4 %>　<%= @fagrid.member5 %></td>
+          <td class="detail-value">
+          <% @fagrid.members.each do |member|%>
+            <%= member.member %>
+          <% end %>
+          </td>
         </tr>
       </tbody>
     </table>
@@ -63,4 +67,3 @@
     </form>
   </div>
 </div>
-

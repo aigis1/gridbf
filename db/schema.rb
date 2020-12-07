@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_01_085553) do
+ActiveRecord::Schema.define(version: 2020_12_05_145032) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -33,6 +33,15 @@ ActiveRecord::Schema.define(version: 2020_12_01_085553) do
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
 
+  create_table "fagrid_members", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "fagrid_id"
+    t.bigint "member_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["fagrid_id"], name: "index_fagrid_members_on_fagrid_id"
+    t.index ["member_id"], name: "index_fagrid_members_on_member_id"
+  end
+
   create_table "fagrids", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "quest_id", null: false
     t.integer "attr_id", null: false
@@ -41,11 +50,6 @@ ActiveRecord::Schema.define(version: 2020_12_01_085553) do
     t.integer "ex_ability2_id"
     t.integer "limit_ability_id", null: false
     t.integer "limit_ability2_id"
-    t.string "member1", null: false
-    t.string "member2", null: false
-    t.string "member3", null: false
-    t.string "member4", null: false
-    t.string "member5", null: false
     t.integer "main_summon_id", null: false
     t.integer "seraphic_id", null: false
     t.integer "atk_arculm_id", null: false
@@ -57,5 +61,13 @@ ActiveRecord::Schema.define(version: 2020_12_01_085553) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "members", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "member", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "fagrid_members", "fagrids"
+  add_foreign_key "fagrid_members", "members"
 end
