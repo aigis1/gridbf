@@ -40,6 +40,11 @@ class FagridsController < ApplicationController
     render json: members
   end
 
+  # アビリティ
+  def ability
+    abilities = LimitAbility([])
+  end
+
   private
   
   def fagrid_params

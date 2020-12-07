@@ -53,9 +53,12 @@
           主人公のアビリティ
           <span class="indispensable">必須</span>
         </div>
-        <%= f.collection_select(:ex_ability_id, ExAbility.all, :id, :name, {include_blank: "---"}, {class:"select-box", id:"ex-ability"}) %>
-        <%= f.collection_select(:limit_ability_id, LimitAbility.all, :id, :name, {include_blank: "---"}, {class:"select-box", id:"limit-ability"}) %>
-
+        <%# アビリティ選択 %>
+        <%= render partial: 'ability_selector', locals: { f: f} %>
+        <select class="select-box" id="limit-ability" name="fagrid_member[limit_ability_id]">
+          <option value="">---</option>
+        </select>
+        <%# /レンダリング %>
       </div>
     </div>
     <%# /戦闘概要 %>

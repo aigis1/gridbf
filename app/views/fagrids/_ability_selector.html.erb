@@ -1,0 +1,3 @@
+
+<%= f.collection_select(:ex_ability_id, ExAbility.all, :id, :name, {include_blank: "---"}, {class:"select-box", id:"ex-ability"}) %>
+<%# <%= f.collection_select(:limit_ability_id, LimitAbility.where(id: 2..5), :id, :name, {include_blank: "---"}, {class:"select-box", id:"limit-ability"}) %> %>
