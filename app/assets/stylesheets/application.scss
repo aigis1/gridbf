@@ -33,6 +33,18 @@
 .image-size {
   max-width: 100%;
 }
+
+.error-alert {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 5vh;
+}
+
+.error-message {
+  font-size: 1.3vw;
+  list-style: circle;
+  color: rgb(182, 48, 0);
+}
 // furima0より流用
 /* border-bottom: 1px solid #eee; */
 
