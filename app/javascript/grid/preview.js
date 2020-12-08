@@ -1,5 +1,3 @@
-if (document.URL.match( /new/ )) {
-
   document.addEventListener('DOMContentLoaded', function(){
     const ImageList = document.getElementById('image-list');
 
@@ -17,4 +15,3 @@ if (document.URL.match( /new/ )) {
       ImageList.appendChild(imageElement);
     });
   });
-};

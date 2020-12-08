@@ -1,3 +1,11 @@
 
 <%= f.collection_select(:ex_ability_id, ExAbility.all, :id, :name, {include_blank: "---"}, {class:"select-box", id:"ex-ability"}) %>
-<%# <%= f.collection_select(:limit_ability_id, LimitAbility.where(id: 2..5), :id, :name, {include_blank: "---"}, {class:"select-box", id:"limit-ability"}) %> %>
+<select class="select-box" id="limit-ability" name="fagrid_member[limit_ability_id]">
+  <option value="" >---</option>
+</select>
+
+<%= f.collection_select(:ex_ability2_id, ExAbility.all, :id, :name, {include_blank: "---"}, {class:"select-box", id:"ex-ability2", style: "display: none;"}) %>
+
+<select class="select-box" id="limit-ability2", style="display: none;" , name="fagrid_member[limit_ability2_id]">
+  <option value="" >---</option>
+</select>

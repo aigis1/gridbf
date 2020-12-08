@@ -3,7 +3,6 @@ Rails.application.routes.draw do
   root to: 'fagrids#index'
   get 'fagrids/search'
   get 'fagrids/sort'
-  get 'fagrids/ability'
   resources :fagrids, only: [:index, :new, :create, :show] do
     collection do
       get 'msearch'
