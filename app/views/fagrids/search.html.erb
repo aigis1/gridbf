@@ -1,6 +1,7 @@
 <main role="main">
-<div class="search-form">
-  <h1>編成を検索する</h1>
+<section class="jumbotron text-center">
+    <div class="container">
+  <h1 class="jumbotron-heading">編成を検索する</h1>
   <%= search_form_for @g, url: fagrids_sort_path do |f| %>
     <%= f.label :quest_id_eq, 'バトル' %>
     <%= f.collection_select :quest_id_eq, Quest.all, :id, :name, include_blank: '指定なし' %>
@@ -23,7 +24,9 @@
     <br>
     <%= f.submit '検索' %>
   <% end %>
-</div>
+  </div>
+</section>
+
   <div class="album py-5 bg-light">
     <div class="container">
       <div class="row">

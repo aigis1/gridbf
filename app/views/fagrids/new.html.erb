@@ -32,7 +32,7 @@
 
     <%# 戦闘概要 %>
     <div class="items-detail">
-      <div class="weight-bold-text">詳細</div>
+      <%# <div class="weight-bold-text">詳細</div> %>
       <div class="form">
         <div class="weight-bold-text">
           対戦相手
@@ -64,22 +64,21 @@
     <div class="new-items">
       <div class="weight-bold-text">
         バトルメンバー
-        <span class="indispensable">必須</span>
       </div>
-      <%= f.text_area :member, class:"items-text js-member", id:"member1-name", placeholder:"キャラクター名", maxlength:"20" %>
-      <%= f.text_area :member2, class:"items-text js-member", id:"autocomplete", placeholder:"キャラクター名", maxlength:"20" %>
-      <%= f.text_area :member3, class:"items-text js-member", id:"member3-name", placeholder:"キャラクター名", maxlength:"20" %>
-      <%= f.text_area :member4, class:"items-text js-member", id:"member4-name", placeholder:"キャラクター名", maxlength:"20" %>
-      <%= f.text_area :member5, class:"items-text js-member", id:"member5-name", placeholder:"キャラクター名", maxlength:"20" %>
+      <%= f.text_field :member, class:"member-name js-member", id:"member1-name", placeholder:"キャラクター名", maxlength:"20" %>
+      <%= f.text_field :member2, class:"member-name js-member", id:"member2-name", placeholder:"キャラクター名", maxlength:"20" %>
+      <%= f.text_field :member3, class:"member-name js-member", id:"member3-name", placeholder:"キャラクター名", maxlength:"20" %>
+      <%= f.text_field :member4, class:"member-name js-member", id:"member4-name", placeholder:"キャラクター名", maxlength:"20" %>
+      <%= f.text_field :member5, class:"member-name js-member", id:"member5-name", placeholder:"キャラクター名", maxlength:"20" %>
     </div>
     <%#/ バトルメンバー %>
 
     <%# 召喚石について %>
     <div class="items-detail">
-      <div class="weight-bold-text question-text">
+      <%# <div class="weight-bold-text question-text">
         <span>召喚石</span>
         <a class="question" href="#">?</a>
-      </div>
+      </div> %>
       <div class="form">
         <div class="weight-bold-text">
           メイン召喚石
@@ -107,7 +106,7 @@
         <div class="weight-bold-text">
           備考欄
         </div>
-      <%= f.text_area :remark, class:"items-text", id:"remark", placeholder:"当てはまらなかったものがある場合や、予備アクションなどがあればこちらに記載してください（始めにアンスリア2アビを使う、召喚石を使う等）", maxlength:"500" %>
+      <%= f.text_area :remark, class:"remark", id:"remark", placeholder:"当てはまらなかったものがある場合や、予備アクションなどがあればこちらに記載してください（始めに何かアビリティを使う、召喚石を使う等）", maxlength:"500" %>
       </div>
       <div class="weight-bold-text">
         終末武器
@@ -124,8 +123,8 @@
 
     <%# 下部ボタン %>
     <div class="sell-btn-contents">
-      <%= f.submit "投稿する" ,class:"sell-btn" %>
-      <%=link_to 'もどる', root_path, class:"back-btn" %>
+      <%= f.submit "投稿する" ,class: "btn btn-primary my-2" %>
+      <%= link_to '戻る', root_path, class: "btn btn-secondary my-2"%>
     </div>
     <%# /下部ボタン %>
   </div>
