@@ -1,54 +1,79 @@
 window.addEventListener('DOMContentLoaded', function(){
   document.getElementById('job').addEventListener('change', function(){
     $('#limit-ability').html(abilityBlank)
+    $('#limit-ability2').html(abilityBlank)
+
     var $jobId = document.getElementById('job').value
 
     if ($jobId == 1) {
       $('#limit-ability').append(job1Ability);
+      $('#limit-ability2').append(job1Ability);
     } else if ($jobId == 2) {
       $('#limit-ability').append(job2Ability);
+      $('#limit-ability2').append(job2Ability);
     } else if ($jobId == 3) {
       $('#limit-ability').append(job3Ability);
+      $('#limit-ability2').append(job3Ability);
     } else if ($jobId == 4) {
       $('#limit-ability').append(job4Ability);
+      $('#limit-ability2').append(job4Ability);
     } else if ($jobId == 5) {
       $('#limit-ability').append(job5Ability);
+      $('#limit-ability2').append(job5Ability);
     } else if ($jobId == 6) {
       $('#limit-ability').append(job6Ability);
+      $('#limit-ability2').append(job6Ability);
     } else if ($jobId == 7) {
       $('#limit-ability').append(job7Ability);
+      $('#limit-ability2').append(job7Ability);
     } else if ($jobId == 8) {
       $('#limit-ability').append(job8Ability);
+      $('#limit-ability2').append(job8Ability);
     } else if ($jobId == 9) {
       $('#limit-ability').append(job9Ability);
+      $('#limit-ability2').append(job9Ability);
     } else if ($jobId == 10) {
       $('#limit-ability').append(job10Ability);
+      $('#limit-ability2').append(job10Ability);
     } else if ($jobId == 11) {
       $('#limit-ability').append(job11Ability);
+      $('#limit-ability2').append(job11Ability);
     } else if ($jobId == 12) {
       $('#limit-ability').append(job12Ability);
+      $('#limit-ability2').append(job12Ability);
     } else if ($jobId == 13) {
       $('#limit-ability').append(job13Ability);
+      $('#limit-ability2').append(job13Ability);
     } else if ($jobId == 14) {
       $('#limit-ability').append(job14Ability);
+      $('#limit-ability2').append(job14Ability);
     } else if ($jobId == 15) {
       $('#limit-ability').append(job15Ability);
+      $('#limit-ability2').append(job15Ability);
     } else if ($jobId == 17) {
       $('#limit-ability').append(job17Ability);
+      $('#limit-ability2').append(job17Ability);
     } else if ($jobId == 18) {
       $('#limit-ability').append(job18Ability);
+      $('#limit-ability2').append(job18Ability);
     } else if ($jobId == 19) {
       $('#limit-ability').append(job19Ability);
+      $('#limit-ability2').append(job19Ability);
     } else if ($jobId == 20) {
       $('#limit-ability').append(job20Ability);
+      $('#limit-ability2').append(job20Ability);
     } else if ($jobId == 21) {
       $('#limit-ability').append(job21Ability);
+      $('#limit-ability2').append(job21Ability);
     } else if ($jobId == 22) {
       $('#limit-ability').append(job22Ability);
+      $('#limit-ability2').append(job22Ability);
     } else if ($jobId == 23) {
       $('#limit-ability').append(job23Ability);
+      $('#limit-ability2').append(job23Ability);
     };
     $('#limit-ability').append(otherAbility)
+    $('#limit-ability2').append(otherAbility)
 
   });
 

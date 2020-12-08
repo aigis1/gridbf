@@ -10,6 +10,7 @@ require("channels")
 require('./preview')  //投稿画面のプレビュー機能
 require('./member')
 require('./ability')
+require('./subAbility')
 
 // Uncomment to copy all static images under ../images to the output folder and reference
 // them with the image_pack_tag helper in views (e.g <%= image_pack_tag 'rails.png' %>)
