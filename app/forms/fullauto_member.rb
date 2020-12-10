@@ -13,8 +13,6 @@ class FullautoMember
     validates :job_id
     validates :ex_ability_id
     validates :limit_ability_id
-    validates :ex_ability2_id, allow_nil: true
-    validates :limit_ability2_id, allow_nil: true
     validates :main_summon_id
     validates :seraphic_id
     validates :atk_arculm_id
