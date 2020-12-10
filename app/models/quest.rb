@@ -6,7 +6,9 @@ class Quest < ActiveHash::Base
     { id: 4, name: 'マグナ2' },
     { id: 5, name: '高級鞄' },
     { id: 6, name: 'マリス' },
-    { id: 7, name: '六竜' }
+    { id: 7, name: '六竜' },
+    { id: 8, name: 'つよバハ' },
+    { id: 9, name: '四大天司'}
     ]
 
   include ActiveHash::Associations
