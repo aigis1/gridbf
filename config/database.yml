@@ -50,5 +50,6 @@ test:
 production:
   <<: *default
   database: gridbf_production
-  username: gridbf
-  password: <%= ENV['GRIDBF_DATABASE_PASSWORD'] %>
+  username: root
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+  socket: /var/lib/mysql/mysql.sock
