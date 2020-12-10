@@ -1,6 +1,6 @@
 class Quest < ActiveHash::Base
   self.data = [
-    { id: 1, name: '—' },
+    { id: 1, name: '汎用編成' },
     { id: 2, name: 'マグナ' },
     { id: 3, name: '旧召喚石' },
     { id: 4, name: 'マグナ2' },
