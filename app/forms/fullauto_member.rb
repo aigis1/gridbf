@@ -24,11 +24,11 @@ class FullautoMember
   def save
     fagrid = Fagrid.create(quest_id: quest_id, attr_id: attr_id, job_id: job_id, ex_ability_id: ex_ability_id, ex_ability2_id: ex_ability2_id,limit_ability_id: limit_ability_id,limit_ability2_id: limit_ability2_id, main_summon_id: main_summon_id,
       seraphic_id: seraphic_id, atk_arculm_id: atk_arculm_id, hp_arculm_id: hp_arculm_id, difficulty_id: difficulty_id, time_about_id: time_about_id, remark: remark, image: image)
-    membername1 = Member.where(member: member).first_or_initialize if member
-    membername2 = Member.where(member: member2).first_or_initialize if member2
-    membername3 = Member.where(member: member3).first_or_initialize if member3
-    membername4 = Member.where(member: member4).first_or_initialize if member4
-    membername5 = Member.where(member: member5).first_or_initialize if member5
+    membername1 = Member.where(member: member).first_or_create if member
+    membername2 = Member.where(member: member2).first_or_create if member2
+    membername3 = Member.where(member: member3).first_or_create if member3
+    membername4 = Member.where(member: member4).first_or_create if member4
+    membername5 = Member.where(member: member5).first_or_create if member5
     FagridMember.create(fagrid_id: fagrid.id, member_id: membername1.id) if membername1
     FagridMember.create(fagrid_id: fagrid.id, member_id: membername2.id) if membername2
     FagridMember.create(fagrid_id: fagrid.id, member_id: membername3.id) if membername3
