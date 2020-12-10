@@ -19,9 +19,13 @@ http://3.115.251.182/
 
 ## 機能一覧
   - 編成の投稿
+  [](/app/assets/images/create.mp4)
   - 投稿された編成の一覧
+  [](/app/assets/images/index.jpg)
   - 投稿内容詳細の閲覧
-  - 投稿を検索機能
+  [](/app/assets/images/show.jpg)
+  - 投稿の検索機能
+  [](/app/assets/images/search.jpg)
   - 投稿時間での並び替え機能（未実装）
   - 評価機能（未実装）
   - 日課チェックシート（未実装）
