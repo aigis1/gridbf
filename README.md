@@ -22,12 +22,16 @@ http://3.115.251.182/
 ## 機能一覧
   - 編成の投稿
   ![](https://user-images.githubusercontent.com/69403974/101802796-2f7d5780-3b53-11eb-9c16-528b2fb8d8f1.gif)
+
   - 投稿された編成の一覧
   ![](https://user-images.githubusercontent.com/69403974/101802754-24c2c280-3b53-11eb-8d9f-468e14989514.jpg)
+  
   - 投稿内容詳細の閲覧
   ![](https://user-images.githubusercontent.com/69403974/101802695-170d3d00-3b53-11eb-8191-309df72d5d40.jpg)
+  
   - 投稿の検索機能
   ![](https://user-images.githubusercontent.com/69403974/101802774-2b513a00-3b53-11eb-8585-ff3b508a83b9.jpg)
+  
   - 投稿時間での並び替え機能（未実装）
   - 評価機能（未実装）
   - 日課チェックシート（未実装）
