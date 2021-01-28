@@ -5,7 +5,8 @@ class FagridsController < ApplicationController
   end
 
   def new
-    @fullauto_member = FagridMember.new
+    session[:new_fagrid] = nil
+    @fullauto_member = FullautoMember.new(session[:new_fagrid] || {})
   end
 
   def create
@@ -14,7 +15,9 @@ class FagridsController < ApplicationController
       @fullauto_member.save
       redirect_to root_path
     else
-      render :new
+      session[:new_fagrid] = fagrid_params.to_hash # *2 フォームで渡された値のみ保存
+      flash[:danger] = @fullauto_member.errors.full_messages
+      redirect_to new_fagrid_path
     end
   end
 
@@ -43,7 +46,7 @@ class FagridsController < ApplicationController
   private
   
   def fagrid_params
-    params.require(:fagrid_member).permit(:image, :quest_id, :attr_id, :job_id, :ex_ability_id, :ex_ability2_id, :limit_ability_id, :limit_ability2_id,
+    params.require(:fullauto_member).permit(:image, :quest_id, :attr_id, :job_id, :ex_ability_id, :ex_ability2_id, :limit_ability_id, :limit_ability2_id,
       :member, :member2, :member3, :member4, :member5, :main_summon_id, :seraphic_id, :atk_arculm_id, :hp_arculm_id, :difficulty_id, :time_about_id, :remark)
   end
   
